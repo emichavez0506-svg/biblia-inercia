@@ -201,7 +201,15 @@ body.intro-on{overflow:hidden}
 .tel{aspect-ratio:9/16;width:min(290px,80vw);flex:none}
 .retrato{width:min(290px,80vw)}
 .retrato img{height:auto;object-fit:unset}
-.fila-tels{display:flex;gap:18px;flex-wrap:wrap}
+.fila-tels{display:flex;gap:18px;flex-wrap:wrap;align-items:center}
+.snack-ancho{width:min(430px,90vw);aspect-ratio:16/9;flex:none}
+.fila-estirpe{display:flex;gap:18px;align-items:flex-start;flex-wrap:wrap}
+.fila-estirpe .a43{flex:1 1 380px;max-width:600px}
+.fila-estirpe .tel{width:min(250px,75vw)}
+.marco img{cursor:zoom-in}
+#lightbox{position:fixed;inset:0;z-index:998;background:rgba(12,9,6,.94);display:none;align-items:center;justify-content:center;cursor:zoom-out;padding:3vmin}
+#lightbox.ver{display:flex}
+#lightbox img{max-width:94vw;max-height:92vh;width:auto;height:auto;box-shadow:0 24px 90px rgba(0,0,0,.65);border-radius:6px}
 .a43{aspect-ratio:4/3}
 .yt{aspect-ratio:16/9}
 .yt iframe{width:100%;height:100%;border:0;display:block}
@@ -385,11 +393,11 @@ body.js .rev.on{opacity:1;transform:none}
   <div class="arch rev"><div class="num">ARCHIVO <b>05</b></div><div class="tit">La estirpe · el personaje</div></div>
   <h2 class="gran rev">Hay una estirpe de personas que toman un arte y lo llevan a donde <em>nunca había llegado.</em></h2>
   <p class="parr rev">Steve Jobs llevó el diseño a la computación cuando las computadoras eran cajas grises. Anthony Bourdain llevó la cocina a la conversación del mundo, sentándose a comer donde nadie volteaba. Carl Sagan llevó la ciencia del observatorio a la sala de la casa. <b>Inercia es de esa estirpe: llevamos la ciencia del negocio, el diseño y el storytelling a donde nunca llegan, al negocio de la calle.</b></p>
-  <div class="slots-2">
+  <div class="fila-estirpe" style="margin-top:38px">
     <div class="marco a43 rev"><div class="mini-tag">CARPETA 05-A</div>
-      <video src="assets/estirpe-bourdain-1.mp4" poster="assets/estirpe-bourdain-1-poster.jpg" controls playsinline preload="metadata"></video></div>
-    <div class="marco a43 rev"><div class="mini-tag">CARPETA 05-B</div>
       <video src="assets/estirpe-bourdain-2.mp4" poster="assets/estirpe-bourdain-2-poster.jpg" controls playsinline preload="metadata"></video></div>
+    <div class="marco tel rev"><div class="mini-tag">CARPETA 05-B · LA EXPLICACIÓN</div>
+      <video src="assets/estirpe-anthony-explicacion.mp4" poster="assets/estirpe-anthony-explicacion-poster.jpg" controls playsinline preload="metadata"></video></div>
   </div>
   <div class="pie-media rev">la estirpe · <b>bourdain</b> · toman un arte y lo llevan a donde nunca había llegado</div>
   <p class="parr rev"><b>Cómo es el personaje:</b> serio, pero seguro. No sigue la moda al cien; entiende los códigos y por eso los usa a su favor. Se mueve igual de natural en el puesto del mercado que en la sala de consejo: sabe pedir en la fonda y sabe presentar al directivo, y en los dos lugares es la misma persona. Pregunta más de lo que afirma. Explica con peras y manzanas. Nunca promete: propone experimentos. Nunca presume: muestra el expediente. <b>Lo que nunca es:</b> gurú, genio arrogante, profesor de pizarrón, vendedor de humo, esclavo de la tendencia.</p>
@@ -401,10 +409,9 @@ body.js .rev.on{opacity:1;transform:none}
   <h2 class="gran rev">Inercia junta lo que casi nunca viene junto: <em>el método y la calle.</em></h2>
   <div class="slots-2">
     <div class="marco rev" style="aspect-ratio:4/5"><div class="mini-tag">CARPETA 06-A · EMI</div>
-      <img class="llena" src="assets/exp-siniestra.jpg" alt="Emi · el método" loading="lazy"></div>
-    <div class="slot rev"><div class="mini-tag">CARPETA 06-B</div>
-      <div class="interior"><div class="punto"></div><div class="tipo">Foto · Rafa</div>
-      <div class="instr">espacio reservado · <b>la calle</b> · en campo / con gente</div></div></div>
+      <img class="llena" src="assets/foto-emi.jpg" alt="Emi · el método" loading="lazy"></div>
+    <div class="marco rev" style="aspect-ratio:4/5"><div class="mini-tag">CARPETA 06-B · RAFA</div>
+      <img class="llena" src="assets/foto-rafa.jpg" alt="Rafa · la calle" loading="lazy"></div></div>
   </div>
   <div class="grid2">
     <div class="card rev"><div class="k">Mitad uno · Emi</div><h4>El método</h4>
@@ -435,7 +442,7 @@ body.js .rev.on{opacity:1;transform:none}
   <h2 class="gran rev">Nada de esto es promesa. <em>Es expediente.</em></h2>
   <div class="expo-5">
     <div class="marco rev"><div class="mini-tag">08-0</div><img src="assets/exp-robotcap.jpg" alt="Robot Cap × Inercia" loading="lazy"></div>
-    <div class="marco rev"><div class="mini-tag">08-A</div><img src="assets/exp-siniestra.jpg" alt="Siniestra × Inercia" loading="lazy"></div>
+    <div class="marco rev"><div class="mini-tag">08-A</div><img src="assets/exp-siniestra-caso.jpg" alt="Siniestra × Inercia · caso" loading="lazy"></div>
     <div class="marco rev"><div class="mini-tag">08-B</div><img src="assets/exp-ept.jpg" alt="Entrenamiento Para Todos · parques inteligentes" loading="lazy"></div>
     <div class="marco rev"><div class="mini-tag">08-C</div><img src="assets/exp-srp.jpg" alt="Préstamos SRP × Inercia" loading="lazy"></div>
     <div class="marco rev"><div class="mini-tag">08-D</div><img src="assets/exp-platicanos.jpg" alt="Platícanos tu Historia" loading="lazy"></div>
@@ -486,11 +493,13 @@ body.js .rev.on{opacity:1;transform:none}
       <div>
         <div class="fila-tels">
           <div class="marco tel"><div class="mini-tag">EJEMPLO 1</div>
-            <video src="assets/snack-humans-1.mp4" poster="assets/snack-humans-1-poster.jpg" controls playsinline preload="metadata"></video></div>
-          <div class="marco tel"><div class="mini-tag">EJEMPLO 2</div>
             <video src="assets/snack-humans-2.mp4" poster="assets/snack-humans-2-poster.jpg" controls playsinline preload="metadata"></video></div>
+          <div class="marco snack-ancho"><div class="mini-tag">EJEMPLO 2</div>
+            <video src="assets/snack-ejemplo-2.mp4" poster="assets/snack-ejemplo-2-poster.jpg" controls playsinline preload="metadata"></video></div>
+          <div class="marco tel"><div class="mini-tag">EJEMPLO 3</div>
+            <video src="assets/snack-humans-3.mp4" poster="assets/snack-humans-3-poster.jpg" controls playsinline preload="metadata"></video></div>
         </div>
-        <div class="pie-media">serie <b>humans being humans</b> · vertical 9:16</div>
+        <div class="pie-media">serie <b>humans being humans</b> · tres ejemplos</div>
       </div>
     </div>
 
@@ -501,9 +510,9 @@ body.js .rev.on{opacity:1;transform:none}
           <div class="marco a43"><div class="mini-tag">EJEMPLO</div>
             <video src="assets/peras-manzanas-ejemplo.mp4" poster="assets/peras-manzanas-ejemplo-poster.jpg" controls playsinline preload="metadata"></video></div>
           <div class="marco yt"><div class="mini-tag">REFERENCIA · ESTILO TVA</div>
-            <iframe src="https://www.youtube-nocookie.com/embed/IWfEly_Jr0g" title="Referencia de estilo TVA" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+            <video src="assets/tva-miss-minutes.mp4" poster="assets/tva-miss-minutes-poster.jpg" controls playsinline preload="metadata"></video></div>
         </div>
-        <div class="pie-media">cómo vender humanidad · <b>referencia de estilo: TVA</b> · <a href="https://www.youtube.com/watch?v=IWfEly_Jr0g" target="_blank" rel="noopener" style="color:var(--rojo);font-weight:700">ver en YouTube ↗</a></div>
+        <div class="pie-media">cómo vender humanidad · <b>referencia de estilo: miss minutes / TVA</b></div>
       </div>
     </div>
 
@@ -739,6 +748,32 @@ body.js .rev.on{opacity:1;transform:none}
   btn.addEventListener('click',salir);
   skip.addEventListener('click',salir);
   intro.addEventListener('click',e=>{if(visto)salir()});   /* tap en cualquier lado una vez listo */
+})();
+
+/* ── videos: pantalla completa al reproducir, se cierra al terminar ── */
+document.querySelectorAll('.marco video').forEach(function(v){
+  v.addEventListener('play',function(){
+    try{
+      if(v.webkitEnterFullscreen){v.webkitEnterFullscreen();}
+      else if(v.requestFullscreen&&!document.fullscreenElement){v.requestFullscreen().catch(function(){});}
+    }catch(e){}
+  });
+  v.addEventListener('ended',function(){
+    try{
+      if(document.fullscreenElement){document.exitFullscreen().catch(function(){});}
+      if(v.webkitDisplayingFullscreen&&v.webkitExitFullscreen){v.webkitExitFullscreen();}
+    }catch(e){}
+  });
+});
+
+/* ── imágenes: clic → lightbox grande ── */
+(function(){
+  var lb=document.createElement('div');lb.id='lightbox';
+  var im=document.createElement('img');lb.appendChild(im);document.body.appendChild(lb);
+  document.querySelectorAll('.marco img').forEach(function(el){
+    el.addEventListener('click',function(){im.src=el.src;im.alt=el.alt||'';lb.classList.add('ver');document.body.style.overflow='hidden'});
+  });
+  lb.addEventListener('click',function(){lb.classList.remove('ver');document.body.style.overflow=''});
 })();
 
 /* ── reveals ── */
