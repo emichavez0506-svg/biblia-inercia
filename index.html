@@ -175,10 +175,10 @@ footer b{color:var(--naranja)}
 /* ══ INTRO ══ */
 #intro{position:fixed;inset:0;z-index:999;background:#0f0f0f;display:flex;align-items:center;justify-content:center;transition:opacity 1s ease}
 #intro.fuera{opacity:0;pointer-events:none}
-#intro video{width:min(100vw,168dvh);aspect-ratio:16/9;object-fit:contain;display:block;background:#0f0f0f}
+#intro video{width:min(100vw,168vh);width:min(100vw,168dvh);aspect-ratio:16/9;object-fit:contain;display:block;background:#0f0f0f}
 @media(orientation:portrait){#intro video{width:100vw}}
-@media(max-width:640px){#introBtn{bottom:max(16dvh,90px);padding:13px 30px 13px 36px;font-size:11px}}
-#introBtn{position:absolute;left:50%;bottom:12dvh;transform:translate(-50%,18px);opacity:0;pointer-events:none;cursor:pointer;
+@media(max-width:640px){#introBtn{bottom:110px;bottom:max(16dvh,90px);padding:13px 30px 13px 36px;font-size:11px}}
+#introBtn{position:absolute;left:50%;bottom:12vh;bottom:12dvh;transform:translate(-50%,18px);opacity:0;pointer-events:none;cursor:pointer;
   font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:.34em;text-transform:uppercase;
   color:var(--brillo);background:rgba(15,11,8,.35);border:2.5px solid var(--naranja);padding:15px 40px 15px 46px;
   transition:opacity .9s ease,transform .9s ease,background .18s,color .18s,border-color .18s}
@@ -187,6 +187,9 @@ footer b{color:var(--naranja)}
 #introSkip{position:absolute;top:18px;right:22px;background:none;border:none;cursor:pointer;
   font-family:var(--mono);font-size:9px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:rgba(242,239,228,.38);padding:8px}
 #introSkip:hover{color:var(--brillo)}
+#introCarga{position:absolute;bottom:5vh;left:50%;transform:translateX(-50%);font-family:var(--mono);font-size:9px;font-weight:600;
+  letter-spacing:.3em;text-transform:uppercase;color:rgba(242,239,228,.4);animation:lat 1.4s ease-in-out infinite;pointer-events:none}
+#introCarga.fuera{display:none}
 body.intro-on{overflow:hidden}
 
 /* ══ MEDIA REAL (marcos foto/video) ══ */
@@ -294,6 +297,7 @@ body.js .rev.on{opacity:1;transform:none}
   <video id="introVid" src="assets/intro-inercia.mp4" poster="assets/intro-inercia-poster.jpg" muted playsinline preload="auto"></video>
   <button id="introBtn" type="button">Iniciar</button>
   <button id="introSkip" type="button">saltar intro ›</button>
+  <div id="introCarga">cargando</div>
 </div>
 
 <nav><div class="nav-fila">
@@ -716,10 +720,13 @@ body.js .rev.on{opacity:1;transform:none}
   if(!intro)return;
   document.body.classList.add('intro-on');
   let visto=false;
-  function mostrar(){if(visto)return;visto=true;btn.classList.add('ver')}
+  const carga=document.getElementById('introCarga');
+  function mostrar(){if(visto)return;visto=true;btn.classList.add('ver');if(carga)carga.classList.add('fuera')}
   vid.addEventListener('timeupdate',()=>{if(vid.currentTime>=6)mostrar()});
   vid.addEventListener('ended',mostrar);           /* el video termina y se queda en el último cuadro */
-  setTimeout(mostrar,8000);                        /* red de seguridad si el video no corre */
+  vid.addEventListener('error',mostrar);
+  vid.addEventListener('playing',()=>{if(carga)carga.classList.add('fuera')});
+  setTimeout(mostrar,5000);                        /* red de seguridad: el botón SIEMPRE aparece */
   const pr=vid.play(); if(pr&&pr.catch)pr.catch(()=>{mostrar()});
   let fuera=false;
   function salir(){
@@ -731,6 +738,7 @@ body.js .rev.on{opacity:1;transform:none}
   }
   btn.addEventListener('click',salir);
   skip.addEventListener('click',salir);
+  intro.addEventListener('click',e=>{if(visto)salir()});   /* tap en cualquier lado una vez listo */
 })();
 
 /* ── reveals ── */
